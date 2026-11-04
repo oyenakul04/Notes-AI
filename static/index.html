@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f6f2">
+  <title>Notes AI — Ask your notes</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Notes AI home">
+        <span class="brand-mark" aria-hidden="true">N</span>
+        <span>Notes<span class="brand-accent">AI</span></span>
+      </a>
+      <span class="local-badge"><span class="status-dot"></span> Private workspace</span>
+    </header>
+
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">YOUR PERSONAL KNOWLEDGE SPACE</p>
+      <h1 id="page-title">Your notes, <span>in conversation.</span></h1>
+      <p class="intro-copy">Bring your notes together and get clear answers grounded in what you uploaded.</p>
+    </section>
+
+    <section class="workspace" aria-label="Notes question and answer workspace">
+      <div class="left-column">
+        <section class="panel upload-panel" aria-labelledby="upload-title">
+          <div class="panel-heading">
+            <div class="step-number">01</div>
+            <div>
+              <h2 id="upload-title">Add your notes</h2>
+              <p>Upload PDF or TXT files to your knowledge space.</p>
+            </div>
+          </div>
+
+          <form id="upload-form">
+            <label class="drop-zone" for="file-input">
+              <span class="upload-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M5 14.5v3A2.5 2.5 0 0 0 7.5 20h9a2.5 2.5 0 0 0 2.5-2.5v-3" />
+                </svg>
+              </span>
+              <span class="drop-title">Choose files to upload</span>
+              <span class="drop-subtitle">or drag and drop them here</span>
+              <span class="file-types">PDF or TXT · Up to 10 MB per file</span>
+              <input id="file-input" name="files" type="file" accept=".pdf,.txt,application/pdf,text/plain" multiple>
+            </label>
+            <div id="selected-files" class="selected-files" aria-live="polite"></div>
+            <button id="upload-button" class="button button-dark full-width" type="submit" disabled>
+              Add selected files <span aria-hidden="true">↗</span>
+            </button>
+            <p id="upload-status" class="status-message" role="status"></p>
+          </form>
+
+          <div class="divider"></div>
+          <div class="documents-heading">
+            <span>IN YOUR WORKSPACE</span>
+            <button id="clear-button" class="text-button" type="button" hidden>Clear all</button>
+          </div>
+          <ul id="document-list" class="document-list" aria-live="polite"></ul>
+          <p id="empty-documents" class="empty-note" hidden>No notes added yet.</p>
+        </section>
+      </div>
+
+      <div class="right-column">
+        <section class="panel question-panel" aria-labelledby="question-title">
+          <div class="panel-heading">
+            <div class="step-number">02</div>
+            <div>
+              <h2 id="question-title">Ask a question</h2>
+              <p>Your answer will be based only on your notes.</p>
+            </div>
+          </div>
+          <form id="question-form">
+            <label class="visually-hidden" for="question-input">Your question</label>
+            <textarea id="question-input" rows="3" maxlength="2000" placeholder="What would you like to know?" required></textarea>
+            <div class="question-footer">
+              <span class="hint">Be specific for the most helpful answer.</span>
+              <button id="ask-button" class="button button-accent" type="submit">
+                Ask Notes AI <span aria-hidden="true">→</span>
+              </button>
+            </div>
+            <p id="question-status" class="status-message" role="status"></p>
+          </form>
+        </section>
+
+        <section id="answer-panel" class="panel answer-panel" aria-labelledby="answer-title" aria-live="polite">
+          <div class="panel-heading">
+            <div class="step-number step-number-muted">03</div>
+            <div>
+              <h2 id="answer-title">Your answer</h2>
+              <p>Answers stay connected to their source notes.</p>
+            </div>
+          </div>
+          <div id="answer-content" class="answer-content">
+            <div class="answer-placeholder">
+              <span class="sparkle" aria-hidden="true">✳</span>
+              <p>Your answer will appear here.</p>
+              <span>Upload a note, then ask away.</span>
+            </div>
+          </div>
+          <div id="sources" class="sources" hidden>
+            <span class="sources-label">FROM YOUR NOTES</span>
+            <ul id="source-list"></ul>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>Notes AI</span>
+      <span>Answers grounded in your uploaded notes</span>
+    </footer>
+  </main>
+</body>
+</html>

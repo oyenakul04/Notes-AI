@@ -1,0 +1,25 @@
+Adobe Experience Manager (AEM) is an enterprise-grade Content Management System (CMS) and Digital Asset Management (DAM) platform built by Adobe. It helps large organizations create, manage, and deliver websites, mobile apps, digital forms, and marketing content at scale.
+
+Core Modules of AEM
+
+AEM is split into several primary solutions depending on what your team needs to build:
+• AEM Sites: A web content management system that lets marketers build and edit pages visually using drag-and-drop components without constantly needing developers.
+• AEM Assets: A digital asset management (DAM) system to store, organize, edit, and distribute images, videos, and PDFs across your organization.
+• AEM Forms: A tool to create, manage, and automate digital enrollment, interactive forms, and responsive e-signature documents.
+• AEM Guides: A cloud-native component content management system (CCMS) for managing technical documentation.
+• Adobe Learning Manager: A learning management system (LMS) used to deliver training and educational content.
+
+How AEM Works: Author vs. Publish
+
+AEM uses a split environment to keep enterprise websites safe and stable:
+• Author Environment: Where internal content creators, copywriters, and marketers write text, upload media, and assemble pages.
+• Publish Environment: Where live visitors view the fast, approved, and secure version of the website.
+• Replication: The controlled process of moving content from the Author environment to the Publish environment once it is reviewed and approved.
+
+Deployment Options
+
+• AEM as a Cloud Service: A modern, auto-scaling SaaS architecture hosted and managed by Adobe, removing the burden of manual version upgrades and infrastructure maintenance.
+• AEM on-premises / Self-hosted: Installed and managed on your own private infrastructure or servers, requiring custom CI/CD pipelines and dedicated IT oversight.
+
+
+Manikanta is a AEM developer

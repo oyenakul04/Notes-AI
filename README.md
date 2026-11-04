@@ -1,3 +1,9 @@
+how to run 
+cd "C:\Users\manikanp\OneDrive - Capgemini\My Resources\L&D\Agentic AI\RAG\My notes AI"
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+python main.py
+
 # Notes AI
 
 A small, local web app for asking questions about the notes you upload. It retrieves relevant text with TF-IDF and sends that context to the AI model configured in your existing `.env` file.
